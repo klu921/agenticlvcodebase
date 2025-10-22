@@ -11,6 +11,7 @@ This demo extracts frames from a single video, captions them, embeds captions, g
 
 Install Python deps:
 ```bash
+cd demo
 pip install -r demo/requirements.txt
 ```
 
