@@ -26,7 +26,6 @@ Create an env folder containing `env.json` like:
   "together_key": "tg-..."
 }
 ```
-Note: Do not commit real keys to github. Rotate any exposed keys immediately.
 
 ### Video folder structure
 Place exactly one video file inside a folder you make, e.g. `demo_video/`:
