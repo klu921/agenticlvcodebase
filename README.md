@@ -1,6 +1,18 @@
+## Agentic Long Video Pipeline:
+
+Current AI models struggle with understanding long videos, and many don't have the capacity to do so due to context length. We approach this problem agentically, using the reasoning ability of LLMs and the visual understanding of VLMs to draw from a database of video-frame representations (needle-in-the-haystack) and reason temporally about long-context questions. Our approach first extracts frame-information in captions, then sets up a communication pipeline between different models to effectively answer a query.
+
+![Pipeline Visualization](images/Pipeline.png)
+
+See our blog here for more details.
+https://klu921.github.io/agentic_lv_blog/
+
+
 ### Demo: Run the end-to-end video QA pipeline on one video
 
-This demo extracts frames from a single video, captions them, embeds captions, generates logs, and answers a free-form question about the video.
+This demo was designed to test the pipeline on a single video and question of your choice. 
+
+It extracts frames from a video, captions them, embeds them, generates logs, and answers a free-form question about the video.
 
 ### Prerequisites
 - Python 3.10+
@@ -10,7 +22,8 @@ This demo extracts frames from a single video, captions them, embeds captions, g
 - API keys in `env.json` (OpenAI required; Together optional)
 
 Install Python deps:
-```bash
+
+```sh
 cd demo
 pip install -r demo/requirements.txt
 ```
@@ -21,6 +34,7 @@ Install ffmpeg (recommended):
 
 ### Prepare environment
 Create an env folder containing `env.json` like:
+
 ```json
 {
   "openai_key": "sk-...",
@@ -38,14 +52,17 @@ The demo will create `frames/` and `captions/` inside this folder.
 
 ### End-to-end: extract → captions → embeddings → logs → answer
 Runs the full pipeline and prints the JSON answer.
-```bash
+
+```sh
 python LVBench/demo/run_demo_one_video.py /abs/path/to/demo_video /abs/path/to/env_folder "Your free-form question here" --uid q1
 ```
+
 - Outputs are written under `/abs/path/to/demo_video/`.
 
 ### Just Q&A (if frames/captions already exist)
 If you’ve already run extraction/captioning/embedding/logs, run the localized no-multiple-choice pipeline:
-```bash
+
+```sh
 python LVBench/demo/one_question_demo.py /abs/path/to/demo_video "Your free-form question here"
 ```
 
