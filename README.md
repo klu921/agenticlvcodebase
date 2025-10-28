@@ -86,7 +86,7 @@ Under your video folder:
 - For reproducibility, prefer absolute paths in commands.
 
 
-See our blog and demo here! 
+See our example traces here! 
 
 https://klu921.github.io/agentic_lv_blog/
 https://klu921.github.io/agentic_lv_demo/
