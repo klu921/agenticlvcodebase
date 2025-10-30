@@ -4,6 +4,8 @@ Current AI models struggle with understanding long videos, and many don't have t
 
 ![Pipeline Visualization](images/Pipeline.png)
 
+For improved performance, we introduce a third-party critic module that receives an answer from a normal agentic pipeline, evaluates the reasoning chain, and returns confirmation or suggestions for re-evaluation.
+
 See our blog here for more details.
 https://klu921.github.io/agentic_lv_blog/
 
